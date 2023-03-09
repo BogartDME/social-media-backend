@@ -1,4 +1,4 @@
-const { Schema, Types, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const moment = require('moment')
 
 const thoughtSchema = new Schema (
@@ -7,7 +7,7 @@ const thoughtSchema = new Schema (
             type: String,
             required: true,
             minLength: 1,
-            maxLength: 128,
+            maxLength: 280,
         },
         createdAt: {
             type: Date,
@@ -19,7 +19,8 @@ const thoughtSchema = new Schema (
             required: true,
         },
         {
-            reactions
+            type: Schema.Types.ObjectId,
+            ref: "reaction"
         }
         },
     {

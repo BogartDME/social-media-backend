@@ -42,7 +42,7 @@ const thoughtSchema = new Schema (
         createdAt: {
             type: Date,
             default: Date.now,
-            get: creationDate => moment(creationDate).format("MM DD YYYY hh:mm:ss"),
+            // get: creationDate => moment(creationDate).format("MM DD YYYY hh:mm:ss"),
         },
         username: {
             type: String,
@@ -53,7 +53,7 @@ const thoughtSchema = new Schema (
     {
         toJSON: {
             virtuals: true,
-            getters: true,
+            // getters: true,
         },
         id: false,
     }
